@@ -1,0 +1,17 @@
+<h1>
+    File upload
+</h1>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="fileObj" multiple>
+    <button>Submit</button>
+</form>
+
+
+<form action="/files" method="GET">
+    <button>Retrieve</button>
+    <tr>
+        <td></td>
+    </tr>
+</form>
+<div id="listOfFiles"></div>

@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title> File upload </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    <!-- <link href="style.css" rel="stylesheet"> -->
+</head>
+
+
+
+<body>
+    <div class="container">
+
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="fileObj" multiple>
+            <button>Submit</button>
+            <h2> List of files </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Type</td>
+                        <td>Size(in bytes)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for( var i=0; i < task.length; i++){ %>
+                        <tr>
+                            <td>
+                                <%= task[i]["name"] %>
+                            </td>
+                            <td>
+                                <%= task[i]["type"] %>
+                            </td>
+                            <td>
+                                <%= task[i]["size_in_bytes"] %>
+                            </td>
+                            <td><button formaction="/removetask" type="submit" value="submit"> Remove
+                                </button></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+</body>
+
+</html>
